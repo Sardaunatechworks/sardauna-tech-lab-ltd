@@ -17,6 +17,7 @@ import {
   X
 } from 'lucide-react';
 import toast from 'react-hot-toast';
+import logo from '../assets/logo.png';
 
 export default function AdminLayout() {
   const [isLoading, setIsLoading] = useState(true);
@@ -86,7 +87,7 @@ export default function AdminLayout() {
         <div className="p-6 flex justify-between items-center">
           <div className="flex items-center gap-3">
             <div className="bg-white p-1 rounded-lg">
-              <img src="/src/assets/logo.png" alt="Logo" className="h-8 w-8 object-contain" />
+              <img src={logo} alt="Logo" className="h-8 w-8 object-contain" />
             </div>
             <div>
               <h2 className="text-xl font-serif font-bold text-brand-yellow leading-tight">Admin Panel</h2>

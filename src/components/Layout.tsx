@@ -2,6 +2,7 @@ import { Outlet, Link, useLocation } from 'react-router-dom';
 import { Menu, X, FlaskConical, ChevronRight } from 'lucide-react';
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
+import logo from '../assets/logo.png';
 
 export default function Layout() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -51,7 +52,7 @@ export default function Layout() {
             >
               <Link to="/" className="flex items-center gap-3 group">
                 <div className="bg-white p-1 rounded-xl shadow-sm border border-gray-100 transition-all duration-300">
-                  <img src="/src/assets/logo.png" alt="Sardauna Tech Lab Logo" className="h-10 w-10 object-contain" />
+                  <img src={logo} alt="Sardauna Tech Lab Logo" className="h-10 w-10 object-contain" />
                 </div>
                 <div className="flex flex-col">
                   <span className="font-serif font-bold text-2xl text-brand-blue leading-none tracking-tight">SARDAUNA</span>
@@ -193,7 +194,7 @@ export default function Layout() {
           <div className="lg:col-span-2">
             <div className="flex items-center gap-3 mb-6">
               <div className="bg-white p-1 rounded-xl">
-                <img src="/src/assets/logo.png" alt="Sardauna Tech Lab Logo" className="h-10 w-10 object-contain" />
+                <img src={logo} alt="Sardauna Tech Lab Logo" className="h-10 w-10 object-contain" />
               </div>
               <div className="flex flex-col">
                 <span className="font-serif font-bold text-2xl leading-none">SARDAUNA</span>

@@ -1,4 +1,5 @@
 import { CheckCircle2 } from 'lucide-react';
+import logo from '../assets/logo.png';
 
 export default function About() {
   const values = [
