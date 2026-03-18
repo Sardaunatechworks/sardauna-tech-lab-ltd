@@ -31,7 +31,7 @@ export default function About() {
           </div>
           <div className="relative">
             <div className="aspect-square rounded-3xl overflow-hidden shadow-2xl bg-white flex items-center justify-center p-12">
-              <img src="/src/assets/logo.png" alt="Sardauna Tech Lab Logo" className="w-full h-full object-contain" referrerPolicy="no-referrer" />
+              <img src={logo} alt="Sardauna Tech Lab Logo" className="w-full h-full object-contain" referrerPolicy="no-referrer" />
             </div>
             <div className="absolute -bottom-8 -left-8 bg-brand-yellow p-8 rounded-2xl shadow-xl max-w-xs">
               <p className="font-serif font-bold text-brand-blue text-xl">"Driven by innovation, reliability, and impact."</p>
