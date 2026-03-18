@@ -1,0 +1,140 @@
+{
+  "entities": {
+    "Service": {
+      "title": "Service",
+      "description": "A service offered by the company",
+      "type": "object",
+      "properties": {
+        "name": { "type": "string" },
+        "description": { "type": "string" },
+        "icon": { "type": "string" },
+        "createdAt": { "type": "string", "format": "date-time" },
+        "updatedAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["name", "description", "icon", "createdAt", "updatedAt"]
+    },
+    "CaseStudy": {
+      "title": "Case Study",
+      "description": "A featured project or case study",
+      "type": "object",
+      "properties": {
+        "title": { "type": "string" },
+        "problem": { "type": "string" },
+        "solution": { "type": "string" },
+        "technologies": { "type": "array", "items": { "type": "string" } },
+        "outcome": { "type": "string" },
+        "image": { "type": "string" },
+        "createdAt": { "type": "string", "format": "date-time" },
+        "updatedAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["title", "problem", "solution", "technologies", "outcome", "image", "createdAt", "updatedAt"]
+    },
+    "Blog": {
+      "title": "Blog Post",
+      "description": "A blog post or article",
+      "type": "object",
+      "properties": {
+        "title": { "type": "string" },
+        "summary": { "type": "string" },
+        "content": { "type": "string" },
+        "date": { "type": "string", "format": "date-time" },
+        "image": { "type": "string" },
+        "author": { "type": "string" }
+      },
+      "required": ["title", "summary", "content", "date", "image", "author"]
+    },
+    "Product": {
+      "title": "Product",
+      "description": "A flagship product or innovation",
+      "type": "object",
+      "properties": {
+        "name": { "type": "string" },
+        "description": { "type": "string" },
+        "status": { "type": "string", "enum": ["Live", "Coming Soon"] },
+        "image": { "type": "string" },
+        "ctaLink": { "type": "string" }
+      },
+      "required": ["name", "description", "status", "image", "ctaLink"]
+    },
+    "Testimonial": {
+      "title": "Testimonial",
+      "description": "A client testimonial",
+      "type": "object",
+      "properties": {
+        "name": { "type": "string" },
+        "company": { "type": "string" },
+        "message": { "type": "string" },
+        "image": { "type": "string" }
+      },
+      "required": ["name", "company", "message", "image"]
+    },
+    "Partner": {
+      "title": "Partner",
+      "description": "A partner or collaborator",
+      "type": "object",
+      "properties": {
+        "name": { "type": "string" },
+        "logo": { "type": "string" },
+        "description": { "type": "string" }
+      },
+      "required": ["name", "logo", "description"]
+    },
+    "Message": {
+      "title": "Message",
+      "description": "A contact form submission",
+      "type": "object",
+      "properties": {
+        "name": { "type": "string" },
+        "email": { "type": "string", "format": "email" },
+        "message": { "type": "string" },
+        "submittedAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["name", "email", "message", "submittedAt"]
+    },
+    "User": {
+      "title": "User",
+      "description": "A registered user (admin)",
+      "type": "object",
+      "properties": {
+        "email": { "type": "string", "format": "email" },
+        "role": { "type": "string", "enum": ["admin", "user"] },
+        "name": { "type": "string" }
+      },
+      "required": ["email", "role", "name"]
+    }
+  },
+  "firestore": {
+    "/services/{serviceId}": {
+      "schema": { "$ref": "#/entities/Service" },
+      "description": "Collection of services"
+    },
+    "/caseStudies/{caseStudyId}": {
+      "schema": { "$ref": "#/entities/CaseStudy" },
+      "description": "Collection of case studies"
+    },
+    "/blog/{blogId}": {
+      "schema": { "$ref": "#/entities/Blog" },
+      "description": "Collection of blog posts"
+    },
+    "/products/{productId}": {
+      "schema": { "$ref": "#/entities/Product" },
+      "description": "Collection of products"
+    },
+    "/testimonials/{testimonialId}": {
+      "schema": { "$ref": "#/entities/Testimonial" },
+      "description": "Collection of testimonials"
+    },
+    "/partners/{partnerId}": {
+      "schema": { "$ref": "#/entities/Partner" },
+      "description": "Collection of partners"
+    },
+    "/messages/{messageId}": {
+      "schema": { "$ref": "#/entities/Message" },
+      "description": "Collection of contact messages"
+    },
+    "/users/{userId}": {
+      "schema": { "$ref": "#/entities/User" },
+      "description": "Collection of users"
+    }
+  }
+}
